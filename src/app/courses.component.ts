@@ -4,34 +4,43 @@ import { CoursesService } from './courses.service';
 @Component({
     selector: 'courses',
     //template: '<h2>{{ "Title:" +  title }}</h2>'
-    template: `
-        <!--<table>
-            <tr>
-                <td [attr.colspan]="colSpan"></td>
-            </tr>
-        </table>-->
-
-        <h2>{{ getTitle() }}</h2>
-        <ul>
-            <li *ngFor="let course of courses">
-                {{ course }}
-            </li>
-        </ul>
-        <!--<img src = "{{ imageUrl }}" />
-        <img [src]="title" />-->
-    `
+    templateUrl: './courses.component.html'
 })
 export class CoursesComponent {
     title = "List of courses";
-    courses;
-    imageUrl = "http://lorempixel.com/400/200";
-    colSpan = 2;
-
-    constructor(service: CoursesService) {
-        this.courses = service.getCourses();
+    email = "test@test.com";
+    //courses;
+    //imageUrl = "http://lorempixel.com/400/200";
+    //colSpan = 2;
+    //isActive = false;
+    
+    onKeyUp(email) {
+        console.log(this.email);
     }
+    constructor() {}
+    
+    // constructor(service: CoursesService) {
+    //     //this.courses = service.getCourses();
+    // }
 
-    getTitle() {
-        return this.title;
-    }
+    // onKeyUp(email) {
+    //     console.log(email);
+    // }
+
+    // onKeyUp($event) {
+    //     console.log($event.target.value);
+    // }
+
+    // getTitle() {
+    //     return this.title;
+    // }
+
+    // onSave($event) {
+    //     console.log('Button was clicked', $event);
+    //     $event.stopPropagation();
+    // }
+
+    // onDivClicked() {
+    //     console.log("Div was clicked");
+    // }
 }
